@@ -1,0 +1,231 @@
+@import url("/css/reset.css");
+@import url("/css/fonts.css");
+
+:root {
+--ff-main: "Manrope", Helvetica, Arial, sans-serif;
+--fw-regular: 500;
+--fw-bold: 700;
+
+--clr-bluegray900: hsl(217, 19%, 35%);
+--clr-bluegray700: hsl(214, 17%, 51%);
+--clr-bluegray400: hsl(212, 23%, 69%);
+--clr-bluegray200: hsl(210, 46%, 95%);
+
+--color-font: hsl(212, 4.45%, 51.57%);
+--color-font-bold: hsl(218.71, 18.13%, 33.53%);
+}
+
+html {
+font-size: 13px;
+font-family: var(--ff-main);
+}
+
+body {
+height: 100vh;
+color: var(--color-font);
+background-color: var(--clr-bluegray200);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.card {
+border-radius: 1rem;
+width: 25.231rem;
+margin-inline: 1rem;
+background-color: white;
+position: relative;
+}
+
+.imageContainer {
+height: 200px;
+}
+
+.headerImage {
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: 0% 30%;
+border-top-left-radius: 1rem;
+border-top-right-radius: 1rem;
+}
+
+.contentWrapper {
+padding-inline: 2.77rem;
+}
+
+.headText {
+color: var(--color-font-bold);
+margin-top: 3.231rem;
+font-size: 1.231rem;
+font-weight: var(--fw-bold);
+line-height: 1.692rem;
+}
+
+.descriptionText {
+margin-top: 1.846rem;
+margin-bottom: 2.923rem;
+}
+
+.authorWrapper {
+display: flex;
+place-items: center;
+margin-bottom: 1.538rem;
+}
+
+.profilePicture {
+width: 3.077rem;
+border-radius: 50%;
+margin-right: 1.231rem;
+}
+
+.name {
+color: var(--color-font-bold);
+font-weight: var(--fw-bold);
+}
+.date {
+font-weight: var(--fw-regular);
+}
+.shareButton {
+display: felx;
+place-content: center;
+margin-left: auto;
+height: 2.538rem;
+width: 2.538rem;
+background-color: var(--clr-bluegray200);
+border-radius: 50%;
+z-index: 10;
+}
+
+.shareButton.active {
+background-color: var(--clr-bluegray400);
+}
+
+.shareImg {
+margin: auto;
+}
+.shareImg.active {
+filter: brightness(0) invert(1);
+}
+
+.shareOverlay {
+visibility: hidden;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+gap: 1rem;
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: var(--clr-bluegray900);
+height: 75px;
+padding-left: 36px;
+border-bottom-left-radius: 1rem;
+border-bottom-right-radius: 1rem;
+}
+
+.shareOverlay.active {
+visibility: visible;
+}
+.shareOverlay p {
+color: var(--clr-bluegray200);
+text-transform: uppercase;
+letter-spacing: 0.375rem;
+}
+.shareOverlay ul {
+display: flex;
+list-style: none;
+margin: 0;
+padding: 0;
+gap: 1rem;
+}
+
+.circle.active .shareIcon {
+filter: brightness(0) invert(1);
+}
+
+@media screen and (min-width: 730px) {
+.card {
+display: flex;
+width: 45.625rem;
+height: 18.5rem;
+box-shadow: 0px 2px 10px;
+}
+
+.imageContainer {
+width: 18.25rem;
+height: 100%;
+}
+
+.headerImage {
+border-top-right-radius: 0;
+border-bottom-left-radius: 0.625rem;
+}
+
+.contentWrapper {
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+padding: 2rem;
+padding-left: 2.25rem;
+padding-right: 2.5rem;
+}
+
+.headText {
+margin-top: 0;
+margin-bottom: 1rem; /* Adjust space after heading */
+}
+
+.descriptionText {
+margin-top: 0;
+margin-bottom: 1.25rem;
+}
+
+.authorWrapper {
+margin-top: 0;
+margin-bottom: 0;
+margin-inline: 0;
+z-index: 1;
+}
+
+.date {
+color: var(--color-font);
+}
+.shareOverlay {
+position: absolute;
+bottom: 8rem;
+right: -3.5rem;
+transform: translate(222%, 65%);
+width: 15.385rem;
+height: auto;
+padding: 1.25rem 2rem;
+border-radius: 0.625rem;
+justify-content: center;
+gap: 1rem;
+padding-left: 2rem;
+box-shadow: 0px 2px 10px;
+
+& ul {
+    margin-left: 0;
+}
+
+&::after {
+    content: "";
+    position: absolute;
+    bottom: -0.625rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-2%);
+    width: 0;
+    height: 0;
+    border-left: 0.625rem solid transparent;
+    border-right: 0.625rem solid transparent;
+    border-top: 0.625rem solid var(--clr-bluegray900);
+}
+}
+
+.shareButton {
+z-index: 1;
+}
+}

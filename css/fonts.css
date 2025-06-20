@@ -1,0 +1,7 @@
+@font-face {
+font-family: 'Manrope';
+src: url('../fonts/Manrope-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;  /* Adjust for different weights (e.g., 400, 700) */
+  font-style: normal;   /* Use 'italic' for italic variants */
+  font-display: swap;   /* Ensures text renders faster */
+}
